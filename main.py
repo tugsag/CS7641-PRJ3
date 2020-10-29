@@ -246,7 +246,7 @@ def ica(X, y, id=None, cluster=False):
     ica = FastICA(n_components=134, whiten=True, random_state=SEED, max_iter=10000)
     highest_trans = ica.fit_transform(X)
 
-    cluster
+    #cluster
     print('cluster running\n')
     print('kmeans -------- ')
     kmeans(highest_trans, y, id=id, redux='_ICA', k=np.argmax(kurts))
@@ -383,7 +383,7 @@ def ann(X, y, id=None, redux=''):
 
     # new params
     print('starting gridsearch')
-    hidden_layer_sizes = [(15, 15,), (10, 10), (15, 10, 10), (25, 25), (20, 20, 20)]
+    hidden_layer_sizes = [(15, 15), (10, 10), (15, 10, 10), (25, 25), (20, 20, 20)]
     activation = ['logistic', 'relu']
     alpha = [.001, .01, .1]
     grid = dict(hidden_layer_sizes=hidden_layer_sizes, activation=activation, alpha=alpha)
